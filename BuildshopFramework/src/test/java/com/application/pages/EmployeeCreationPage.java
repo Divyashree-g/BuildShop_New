@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class EmployeeCreationPage
-{//commented 
+{
 	public EmployeeCreationPage(WebDriver driver)
 	{
 		
@@ -39,6 +39,9 @@ public class EmployeeCreationPage
 	
 	public void createUser()
 	{
+		userNameDropDown.click();
+		manageUsersLink.click();
+		addUsersLink.click();
 		Select select = new Select(userTypeDropDown);
 		select.selectByVisibleText("Employee");
 		userNameTextField.sendKeys("Devis");
