@@ -7,7 +7,7 @@ import com.application.pages.LoginPage;
 public class EmployeeCreationTest extends BaseClass
 {
 
-    @Test
+    @Test(description="Employee creations")
     public void testEmployeeCreation()
     {
     	LoginPage login=new LoginPage(driver);
