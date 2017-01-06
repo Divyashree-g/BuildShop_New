@@ -6,7 +6,7 @@ import com.application.pages.LoginPage;
 
 public class EmployeeCreationTest extends BaseClass
 {
-	
+
     @Test
     public void testEmployeeCreation()
     {
