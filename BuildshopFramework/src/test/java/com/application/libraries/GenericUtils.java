@@ -338,6 +338,11 @@ public class GenericUtils {
 		Actions act = new Actions(driver);
 		act.contextClick(element).perform();
 	}
+	public static void sendKeysUsingAction(WebDriver driver, WebElement element, String keysToSend)
+	{
+		Actions act = new Actions(driver);
+		act.sendKeys(element, keysToSend).perform();
+	}
 	public static void keyDown(WebDriver driver, Keys thekey)
 	{
 		Actions act = new Actions(driver);
