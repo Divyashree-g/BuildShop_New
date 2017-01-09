@@ -11,9 +11,9 @@ public class EmployeeCreationTest extends BaseClass
     public void testEmployeeCreation()
     {
     	LoginPage login=new LoginPage(driver);
-	    login.loginToApplication();
-	    EmployeeCreationPage emp=new EmployeeCreationPage(driver);
-    	emp.createUser();		
+	    login.loginToApplication(driver);
+	    /*EmployeeCreationPage emp=new EmployeeCreationPage(driver);
+    	emp.createUser();	*/	
     }
     
 
