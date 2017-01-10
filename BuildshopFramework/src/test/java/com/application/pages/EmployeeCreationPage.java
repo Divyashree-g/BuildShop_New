@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.application.libraries.GenericUtils;
+
 public class EmployeeCreationPage
 {
 	public EmployeeCreationPage(WebDriver driver)
@@ -41,14 +43,13 @@ public class EmployeeCreationPage
 	private WebElement continueButton;
 	
 	
-	public void createUser()
+	public void createUser(String empusername, String email, String password)
 	{
 		userNameDropDown.click();
 		
 		manageUsersLink.click();
 		addUsersLink.click();
-		Select select = new Select(userTypeDropDown);
-		select.selectByVisibleText("Employee");
+		GenericUtils.selectbyVisibletext(userTypeDropDown, "Employee");
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -56,11 +57,11 @@ public class EmployeeCreationPage
 			e.printStackTrace();
 		}
 		userNameTextField1.click();
-		userNameTextField1.sendKeys("Aana rai");
+		userNameTextField1.sendKeys(empusername);
 		emailTextField1.click();
-		emailTextField1.sendKeys("aana1234@gmail.com");
+		emailTextField1.sendKeys(email);
 		passwordTextField1.click();
-		passwordTextField1.sendKeys("aana12345");
+		passwordTextField1.sendKeys(password);
 		createUserButton.click();
 		continueButton.click();
 	}	
