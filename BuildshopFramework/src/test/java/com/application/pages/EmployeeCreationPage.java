@@ -10,8 +10,11 @@ import com.application.libraries.GenericUtils;
 
 public class EmployeeCreationPage
 {
+	WebDriver driver;
+	
 	public EmployeeCreationPage(WebDriver driver)
 	{
+		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
