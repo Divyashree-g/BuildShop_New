@@ -31,11 +31,11 @@ public class ProjectSetupPage
 	@FindBy(id="ctl00_MainContent_GridView1_ctl02_btnEditProject")
 	private WebElement projectDeleteButton;
 	
-	@FindBy( id="ctl00_MainContent_txtFilter")
+	/*@FindBy( id="ctl00_MainContent_txtFilter")
 	private WebElement projectSearchTextFiled;
-	
+			
 	@FindBy(id="ctl00_MainContent_btnSearch")
-	private WebElement projectSearchIcon;
+	private WebElement projectSearchIcon;*/
 	
 	@FindBy(id="__tab_ctl00_MainContent_Tabs_TabPanel2")
 	private WebElement projectResourceTab;
@@ -58,6 +58,13 @@ public class ProjectSetupPage
 	@FindBy( id="ctl00_MainContent_Tabs_PanelNotes_FormViewNotes1_UpdateCancelButton")
 	private WebElement projectNotesCancelButton;
 	
+	@FindBy(linkText="Remove from Project")
+	private WebElement teamRemovfromProjectLink;
+	
+	@FindBy(linkText="Add to Project")
+	private WebElement teamAddtoProjectLink;
+	
+
 	public void clickManageProjectsLink()
 	{
 		manageProjectsLink.click();
@@ -83,7 +90,7 @@ public class ProjectSetupPage
 		projectDeleteButton.click();
 	}
 	
-	public void enterProjectInSearchTextField(String searchtext)
+	/*public void enterProjectInSearchTextField(String searchtext)
 	{
 		projectSearchTextFiled.sendKeys(searchtext);
 	}
@@ -92,7 +99,7 @@ public class ProjectSetupPage
 	{
 		projectSearchIcon.click();
 	}
-	
+	*/
 	public void clickProjectResourceTab()
 	{
 		projectResourceTab.click();

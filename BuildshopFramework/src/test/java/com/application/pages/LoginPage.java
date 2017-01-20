@@ -1,9 +1,12 @@
 package com.application.pages;
-//comment for verification
+//Comment Added Again 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import com.application.libraries.GenericUtils;
+
 
 public class LoginPage {
 	public LoginPage(WebDriver driver)
@@ -14,21 +17,24 @@ public class LoginPage {
 	@FindBy (xpath="//div[@class='hpmenu']/..//a[@class='headerLinksHP']")
 	private WebElement welcomePageSignInLink;
 	   
-	@FindBy (id="ctl00_ContentPlaceHolder1_Login101_UserName")
+	@FindBy (xpath = "//input[@id='ctl00_ContentPlaceHolder1_Login101_UserName']/following-sibling::input[@class='txt-sign-in']")
 	private WebElement usernameTextField;
 
-	@FindBy (id="ctl00_ContentPlaceHolder1_Login101_Password")
+	@FindBy (xpath = "//input[@id='ctl00_ContentPlaceHolder1_Login101_Password']/following-sibling::input[@class='txt-sign-in']")
 	private WebElement passwordTextField;
 	
-	@FindBy (id="ctl00_ContentPlaceHolder1_Login101_Submit2")
+	@FindBy (xpath="//input [@ id='ctl00_ContentPlaceHolder1_Login101_Submit2']")
 	private WebElement loginPageSignInButton;
-
-	public void loginToApplication()
+	
+	public void loginToApplication(WebDriver driver, String username,String password)
 	{
 		welcomePageSignInLink.click();
-		usernameTextField.sendKeys("Bill Thomas");
-		passwordTextField.sendKeys("Bill1234");
+		
+		GenericUtils.sendKeysUsingAction(driver, usernameTextField, username);
+		GenericUtils.sendKeysUsingAction(driver, passwordTextField, password);
 		loginPageSignInButton.click();
 				
 	}
+	
+	
 }
