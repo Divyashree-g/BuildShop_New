@@ -135,7 +135,7 @@ public class BaseClass {
 	
 	@AfterClass
 	public void classPostconditions(){
-		driver.quit();
+		//driver.quit();
 		ExtentTestManager.getTest().log(LogStatus.INFO, "Browser closed");
 		ExtentManager.getReporter().endTest(ExtentTestManager.getTest());		
 		ExtentManager.getReporter().flush();

@@ -12,7 +12,13 @@ public class CreateField360CustomerAndVerifyAtContacts extends BaseClass
   public void Field360Customer() 
   {
 	  LoginPage lp=new LoginPage(driver);
-	  lp.loginToApplication();
+	  
+	  lp.clickWelcomePageSignInLink();
+	  String username = ExcelLibrary.getExcelData("./data/data.xlsx", "Sheet1", 1, 1);
+	  lp.enterUsernameTextField(username);
+	  String password = ExcelLibrary.getExcelData("./data/data.xlsx", "Sheet1", 1, 2);
+	  lp.enterPasswordTextField(password);
+	  lp.clickLoginPageSignInButton();
 	  
 	  Field360Page fp=new Field360Page(driver);
 	  fp.clickField360Page();
